@@ -1,0 +1,63 @@
+{% extends "Admin/newtemp.html" %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="/adm_editpolice" enctype="multipart/form-data">
+  <table class="table table-bordered">
+    <tr>
+      <td >Name</td>
+      <td ><label for="textfield"></label>
+          <input type="hidden" value="{{ data[0] }}" name="hid" class="form-control">
+      <input type="text" name="name" id="textfield" value="{{ data[1] }}" class="form-control" /></td>
+    </tr>
+    <tr>
+      <td>Place</td>
+      <td><label>
+        <input type="text" name="place" id="textfield6" value="{{ data[2] }}" class="form-control" />
+      </label></td>
+    </tr>
+    <tr>
+      <td>Post</td>
+      <td><label for="textfield2"></label>
+        <input type="text" name="post" id="textfield2" value="{{ data[3] }}" class="form-control"/></td>
+    </tr>
+    <tr>
+      <td>PIN</td>
+      <td><label for="textfield10"></label>
+        <input type="number" name="pin" id="textfield10" value="{{ data[4] }}" class="form-control" /></td>
+    </tr>
+    <tr>
+      <td>City</td>
+      <td><label for="textfield2"></label>
+        <input type="text" name="city" id="textfield2" value="{{ data[5] }}" class="form-control"/></td>
+    </tr>
+    <tr>
+      <td>District</td>
+      <td><label for="textfield6"></label>
+        <input type="text" name="district" id="textfield6" value="{{ data[6] }}" class="form-control" /></td>
+    </tr>
+    <tr>
+      <td>Photo</td>
+      <td><label for="fileField"></label>
+        <input type="file" name="photo" id="fileField" /></td>
+    </tr>
+    <tr>
+      <td>E-mail</td>
+      <td><label for="textfield4"></label>
+      <input type="email" name="mail" id="textfield4" value="{{ data[8] }}" class="form-control" /></td>
+    </tr>
+    <tr>
+      <td>Phone</td>
+      <td><label for="textfield11"></label>
+        <input type="number" name="phone" id="textfield11" value="{{ data[9] }}" class="form-control"/></td>
+    </tr>
+    <tr>
+      <td>FAX</td>
+      <td><label for="textfield5"></label>
+      <input type="number" name="fax" id="textfield5" value="{{ data[10] }}" class="form-control" /></td>
+    </tr>
+    <tr>
+      <td><div align="center"></div></td>
+      <td><input type="submit" name="button" id="button" value="ADD" class="btn btn-primary"/></td>
+    </tr>
+  </table>
+</form>
+{% endblock %}

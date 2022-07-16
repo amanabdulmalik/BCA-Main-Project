@@ -1,0 +1,132 @@
+{% extends "Police/newpolice.html" %}
+{% block body %}
+<form action="/plc_edit" method="post" enctype="multipart/form-data" name="form1" id="form1">
+  <table width="473" border="0" align="center">
+    <tr>
+      <td colspan="2"><strong>Personal Details</strong></td>
+    </tr>
+    <tr>
+      <td colspan="2">&nbsp;</td>
+    </tr>
+    <tr>
+        <input type="hidden" value="{{ data[0] }}" name="hid">
+      <td>Name</td>
+      <td><label for="textfield6"></label>
+        <input type="text" name="name" id="textfield6" value="{{ data[1] }}" required /></td>
+    </tr>
+    <tr>
+      <td height="30">Gender</td>
+      <td><label for="textfield10"></label>
+        <table width="274" border="0">
+          <tr>
+            <td width="59"><label>
+              <input type="radio" name="gender" {% if data[2]=='male' %}checked="checked"{% endif %} id="radio" value="male" />
+              Male</label></td>
+            <td width="94"><label>
+              <input type="radio" name="gender" id="radio2" {% if data[2]=='female' %}checked="checked"{% endif %} value="female" />
+              Female</label></td>
+            <td width="99"><label>
+              <input type="radio" name="gender" {% if data[2]=='other' %}checked="checked"{% endif %} id="radio3" value="other" />
+              Other</label></td>
+          </tr>
+        </table></td>
+    </tr>
+    <tr>
+      <td>DoB</td>
+      <td><label for="textfield7"></label>
+        <input type="date" name="dob" id="textfield7" value="{{ data[3] }}" required/></td>
+    </tr>
+    <tr>
+      <td>Photo</td>
+      <td><label for="fileField"></label>
+          <img src="/static/uploads/{{ data[4] }}" width="100" height="100"><br>
+        <input type="file" name="photo" id="fileField" /></td>
+    </tr>
+    <tr>
+      <td>House No</td>
+      <td><label for="textfield27"></label>
+        <input type="text" required name="houseno" id="textfield27" value="{{ data[5] }}" /></td>
+    </tr>
+    <tr>
+      <td>Street</td>
+      <td><label for="textfield28"></label>
+        <input type="text" required name="street" id="textfield28" value="{{ data[6] }}" /></td>
+    </tr>
+    <tr>
+      <td>City</td>
+      <td><label for="textfield29"></label>
+        <input type="text" required name="city" id="textfield29" value="{{ data[7] }}" /></td>
+    </tr>
+    <tr>
+      <td>District</td>
+      <td><label for="textfield30"></label>
+        <input type="text" required name="district" id="textfield30" value="{{ data[8] }}" /></td>
+    </tr>
+    <tr>
+      <td>State</td>
+      <td><label for="textfield31"></label>
+        <input type="text" required name="state" id="textfield31" value="{{ data[9] }}" /></td>
+    </tr>
+    <tr>
+      <td colspan="2">&nbsp;</td>
+    </tr>
+    <tr>
+      <td colspan="2"><strong>Physical Details</strong></td>
+    </tr>
+    <tr>
+      <td>Height</td>
+      <td><label for="textfield9"></label>
+        <input type="text" required name="height" id="textfield9" value="{{ data[10] }}" /></td>
+    </tr>
+    <tr>
+      <td>Weight</td>
+      <td><label for="textfield13"></label>
+        <input type="text" required name="weight" id="textfield13" value="{{ data[11] }}" /></td>
+    </tr>
+    <tr>
+      <td>Skin Tone</td>
+      <td><label for="textfield14"></label>
+        <input type="text" required name="skintone" id="textfield14" value="{{ data[12] }}" /></td>
+    </tr>
+    <tr>
+      <td>Identification Marks</td>
+      <td><label for="textfield18"></label>
+        <input type="text" required name="identificationmarks" id="textfield18" value="{{ data[13] }}" /></td>
+    </tr>
+    <tr>
+      <td colspan="2">&nbsp;</td>
+    </tr>
+    <tr>
+      <td colspan="2"><strong>Missing Details</strong></td>
+    </tr>
+    <tr>
+      <td>Missing Place</td>
+      <td><label for="textfield17"></label>
+        <input type="text" required name="missingplace" id="textfield17" value="{{ data[14] }}" /></td>
+    </tr>
+    <tr>
+      <td>Last seen</td>
+      <td><label for="textfield16"></label>
+        <input type="text" required name="lastseen" id="textfield16" value="{{ data[15] }}" /></td>
+    </tr>
+    <tr>
+      <td>Dress</td>
+      <td><label for="textfield"></label>
+      <input type="text" name="dress" required id="textfield" value="{{ data[16] }}" /></td>
+    </tr>
+    <tr>
+      <td colspan="2">&nbsp;</td>
+    </tr>
+    <tr>
+      <td><div align="left">Contact</div></td>
+      <td><label for="textfield3"></label>
+      <input type="text" required pattern="[9876][0-9]{9}" name="contact" id="textfield3" value="{{ data[17] }}" /></td>
+    </tr>
+    <tr>
+      <td colspan="2"><div align="center">
+        <input type="submit" name="button" id="button" value="Update" />
+      </div></td>
+    </tr>
+  </table>
+</form>
+{% endblock %}

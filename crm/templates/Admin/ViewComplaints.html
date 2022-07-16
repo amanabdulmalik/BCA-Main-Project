@@ -1,0 +1,27 @@
+{% extends "Admin/newtemp.html" %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="">
+  <table class="table table-bordered">
+    <tr>
+      <th width="93" scope="col">Sl. No</th>
+      <th width="145" scope="col">Date</th>
+      <th width="179" scope="col">User Info</th>
+      <th width="288" scope="col">Complaint</th>
+      <th width="181" scope="col">Reply</th>
+{#      <th width="144" scope="col">&nbsp;</th>#}
+    </tr>
+      {% for i in res %}
+    <tr>
+      <td>{{ loop.index }}</td>
+      <td>{{ i[1] }}</td>
+      <td>{{ i[2] }}</td>
+      <td>{{ i[3] }}</td>
+      <td>{{ i[4] }}</td>
+{#      <td><div align="center"><a href="/adm_complaintreply/{{ i[0] }}">Reply</a></div></td>#}
+    </tr>
+      {% endfor %}
+  </table>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+</form>
+{% endblock %}

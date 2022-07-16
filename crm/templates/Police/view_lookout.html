@@ -1,0 +1,27 @@
+{% extends "Police/newpolice.html" %}
+{% block body %}
+<body>
+<form action="" method="post">
+   <table class="table table-bordered" border="1">
+  <tr>
+    <th>Sl.No</th>
+    <th>Image</th>
+      <th >Name</th>
+    <th>Identification Mark</th>
+    <td>&nbsp;</td>
+  </tr>
+  {% for i in data %}
+  <tr>
+  <td>{{ loop.index }}</td>
+    <td><img src="/static/uploads/{{ i[17] }}" height="100px" width="100px" alt=""></td>
+    <td>{{ i[3] }}</td>
+    <td>{{ i[7] }}</td>
+      <td><a href="/delete_lookout/{{ i[0] }}"  onclick="return confirm('Do you want to delete?')"><input type="button" value="Delete" class="btn-danger"></a></td>
+    </tr>
+    {% endfor %}
+    </table>
+</form>
+
+</body>
+
+{% endblock %}

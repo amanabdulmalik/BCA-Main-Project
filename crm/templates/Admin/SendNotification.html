@@ -1,0 +1,29 @@
+{% extends "Admin/newtemp.html" %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="/adm_sendnotification2">
+  <table class="table table-hover">
+    <tr>
+      <td>Subject</td>
+      <td><label for="textfield"></label>
+      <input type="text" name="textfield" id="textfield" class="form-control" required/></td>
+    </tr>
+    <tr>
+      <td>Content</td>
+      <td><label for="textfield2"></label>
+      <input type="text" name="textfield2" id="textfield2" class="form-control" required/></td>
+    </tr>
+      <tr>
+      <td>Type</td>
+      <td><label for="select"></label>
+        <select name="select" id="select" class="form-control" >
+          <option value="Police">Police</option>
+          <option value="User">User</option>
+      </select></td>
+    </tr>
+    <tr>
+      <td><div align="center"></div></td>
+      <td><input type="submit" name="button" id="button" class="btn btn-primary" value="Send" /></td>
+    </tr>
+  </table>
+</form>
+{% endblock %}

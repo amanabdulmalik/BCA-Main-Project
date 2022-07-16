@@ -1,0 +1,39 @@
+{% extends "Police/newpolice.html" %}
+{% block body %}
+<body>
+<form action="" method="post">
+   <table class="table table-bordered" border="1">
+  <tr>
+    <th>Sl. No</th>
+    <th>Image</th>
+      <th >Name</th>
+    <th >Crime</th>
+      <th>Dob</th>
+      <th>Gender</th>
+      <th>District</th>
+    <th>Place</th>
+    <th>Identification Mark</th>
+    <td colspan="3">&nbsp;</td>
+  </tr>
+  {% for i in data %}
+  <tr>
+  <td>{{ loop.index }}</td>
+    <td><img src="/static/uploads/{{ i[15] }}" height="100px" width="100px"></td>
+    <td>{{ i[1] }}</td>
+    <td>{{ i[17] }}</td>
+    <td>{{ i[3] }}</td>
+    <td>{{ i[2] }}</td>
+    <td>{{ i[11] }}</td>
+    <td>{{ i[8] }}</td>
+    <td>{{ i[5] }}</td>
+      <td><a href="/lookout_notice/{{ i[0] }}"><input type="button" value="Look out" class="btn-info"></a> </td>
+    <td><a href="/edit_criminallist/{{ i[0] }}"><input type="button" value="Edit" class="btn-info"></a></td>
+    <td><a href="/delete_criminallist/{{ i[0] }}"  onclick="return confirm('Do you want to delete?')"><input type="button" value="Delete" class="btn-danger"></a></td>
+    </tr>
+    {% endfor %}
+    </table>
+</form>
+
+</body>
+
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends "Admin/newtemp.html" %}
+{% block body %}
+  <form id="form1" name="form1" method="post" action="">
+    <table class="table table-bordered ,table table-hover">
+      <tr>
+        <th width="70" height="38" scope="col">SL no</th>
+        <th width="212" scope="col">Name</th>
+        <th width="230" scope="col">Details</th>
+        <th width="246" scope="col">Description</th>
+        <th width="138" scope="col">Photo</th>
+        <th width="159" scope="col">Contact</th>
+        </tr>
+        {% for i in res %}
+      <tr>
+        <td height="76">{{loop.index}}</td>
+        <td>{{ i[1] }}</td>
+        <td>Gender:{{ i[2]}}<br>DoB:{{i[3]}}<br>House No:{{i[5]}}<br>Street:{{i[6]}}<br>City:{{i[7]}}<br>District:{{i[8]}}<br>State:{{ i[9] }}</td>
+        <td><br>Height:{{i[10]}}<br>Weight:{{i[11]}}<br>Skin Tone:{{i[12]}}<br>ID Marks:{{i[13]}}<br>Missing Place:{{i[14]}}<br>Last Seen:{{i[15]}}</td>
+        <td><img src="/static/uploads/{{ i[4] }}"  width="100" height="100"></td>
+        <td>Contact:{{i[16]}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+  </form>
+{% endblock %}
+
+
+

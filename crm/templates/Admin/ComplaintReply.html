@@ -1,0 +1,19 @@
+{% extends "Police/newpolice.html" %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="/plc_complaintreply2">
+  <table width="200" border="0" align="center">
+    <tr>
+      <td>Reply</td>
+      <td><label>
+        <textarea name="textarea" id="textarea" cols="45" rows="5"></textarea>
+      </label></td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+        <input type="hidden" value="{{ data[0] }}" name="hid">
+      <td><input type="submit" name="button" id="button" value="Send" /></td>
+    </tr>
+  </table>
+</form>
+{% endblock %}
+

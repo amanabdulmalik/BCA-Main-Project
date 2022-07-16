@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_lookout"
+            android:icon="@drawable/lookout"
+            android:title="Lookout Notice" />
+        <item
+            android:id="@+id/nav_missing"
+            android:icon="@drawable/missing"
+            android:title="Missing Persons" />
+        <item
+            android:id="@+id/nav_criminals"
+            android:icon="@drawable/criminal"
+            android:title="Criminal List" />
+        <item
+            android:id="@+id/nav_police"
+            android:icon="@drawable/police_st"
+            android:title="Police Stations" />
+        <item
+            android:id="@+id/nav_replies"
+            android:icon="@drawable/complaint"
+            android:title="Complaints" />
+        <item
+            android:id="@+id/nav_notifications"
+            android:icon="@drawable/notification"
+            android:title="Notifications" />
+
+    </group>
+
+    <item android:title="Settings">
+        <menu>
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/cpass"
+                android:title="Change Password" />
+            <item
+                android:id="@+id/nav_send"
+                android:icon="@drawable/logout"
+                android:title="Logout" />
+        </menu>
+    </item>
+
+</menu>

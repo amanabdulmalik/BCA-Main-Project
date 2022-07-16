@@ -1,0 +1,107 @@
+{% extends "Police/newpolice.html" %}
+{% block body %}
+
+
+<body>
+<form action="/crimelist_update" method="POST" enctype="multipart/form-data">
+    <table class="table table-bordered" border="1">
+    <input type="hidden" value="{{ data[0] }}" name="hid">
+  <tr>
+    <td >Name</td>
+    <td>
+      <input type="text" name="name" id="name" value="{{ data[1] }}"  class="form-control" required/></td>
+  </tr>
+    <tr>
+    <td >father</td>
+    <td>
+      <input type="text" name="father" value="{{ data[12] }}" id="name" class="form-control" required/></td>
+  </tr>
+    <tr>
+    <td >mother</td>
+    <td>
+      <input type="text" name="mother" value="{{ data[13] }}" id="name" class="form-control" required/></td>
+  </tr>
+    <tr>
+    <td >blood</td>
+    <td>
+      <input type="text" name="blood" id="name" value="{{ data[4] }}" class="form-control" required/></td>
+  </tr>
+    <tr>
+    <td >house no</td>
+    <td>
+      <input type="text" name="house" id="name" class="form-control" value="{{ data[6] }}" required/></td>
+  </tr>
+    <tr>
+    <td >street</td>
+    <td>
+      <input type="text" name="street" id="name" class="form-control" value="{{ data[7] }}" required/></td>
+  </tr>
+    <tr>
+    <td >post</td>
+    <td>
+      <input type="text" name="post" id="name" class="form-control" value="{{ data[9] }}" required/></td>
+  </tr>
+    <tr>
+    <td >pin</td>
+    <td>
+      <input type="text" name="pin" id="name" class="form-control" value="{{ data[10] }}" required/></td>
+  </tr>
+  <tr>
+    <td>Place</td>
+    <td><label for="place"></label>
+      <input type="text" name="place" class="form-control" id="place" value="{{ data[8] }}" required/></td>
+  </tr>
+        <tr>
+    <td>Gender</td>
+    <td><label for="place"></label>
+        <input type="radio" name="radio" id="radio" {% if data[2]=='male' %} checked="checked"{% endif %} value="male" required />male
+            <input type="radio" name="radio" id="radio" {% if data[2]=='female' %} checked="checked"{% endif %} value="female" required/>female
+  </tr>
+  <tr>
+    <td>Dob</td>
+    <td><label for="post"></label>
+      <input type="date" name="dob" class="form-control" value="{{ data[3] }}" id="dob" required/></td>
+  </tr>
+  <tr>
+    <td>Crime</td>
+    <td><select name="crime" required>
+    <option value="{{ data[14] }}">{{ data[17] }}</option>
+        {% for i in data1 %}
+        <option value="{{ i[0] }}">{{ i[1] }}</option>
+        {% endfor %}
+    </select></td>
+  </tr>
+  <tr>
+    <td>District</td>
+    <td>
+      <select name="district" id="district" class="form-control">
+          <option>{{ data[11] }}</option>
+      <option>kannur</option>
+      <option>kozhikod</option>
+      <option>malappuram</option>
+      </select></td>
+  </tr>
+{#  <tr>#}
+{#    <td>E-mail</td>#}
+{#    <td><label for="email"></label>#}
+{#      <input type="email" name="email" id="email" class="form-control" required/></td>#}
+{#  </tr>#}
+  <tr>
+    <td>Identification</td>
+    <td>
+      <input type="text" value="{{ data[5] }}" name="identi" id="identi" class="form-control" required/></td>
+  </tr>
+  <tr>
+    <td>Photos</td>
+    <td><label for="photos"></label>
+        <img src="/static/uploads/{{ data[15] }}" height="150" width="150">
+      <input type="file" name="photos" id="photos" class="form-control" /></td>
+  </tr>
+  <tr>
+    <td colspan="2" align="center"><input type="submit" class="btn-success" name="save" id="save" value="Update" /></td>
+  </tr>
+</table>
+</form>
+
+
+{% endblock %}

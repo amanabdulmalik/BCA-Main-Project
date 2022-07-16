@@ -1,0 +1,30 @@
+{% extends "Admin/newtemp.html" %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="">
+  <table class="table-bordered table ,table table-hover">
+    <tr>
+      <th scope="col">SI No</th>
+      <th  scope="col">Name</th>
+      <th  scope="col">Address</th>
+      <th  scope="col">E-mail</th>
+      <th  scope="col">Phone</th>
+      <th  scope="col">Fax</th>
+      <th  scope="col"><p>&nbsp;</p></th>
+      <th  scope="col">&nbsp;</th>
+    </tr>
+      {% for i in res %}
+    <tr>
+      <td height="61">{{ loop.index}}</td>
+      <td align="center"><img src="/static/uploads/{{ i[7] }}"  width="100" height="100"><br><b>{{ i[1] }}</b></td>
+      <td>Place: {{ i[2]}}<br>Post: {{ i[3] }}<br>PIN: {{ i[4] }}<br>City: {{ i[5] }}<br>District: {{ i[6] }}</td>
+
+      <td>{{ i[8] }}</td>
+      <td>{{ i[9] }}</td>
+      <td>{{ i[10] }}</td>
+      <th width="50" scope="col"><a href="/plc_edit_police/{{ i[0] }}">Edit</a></th>
+      <th width="50" scope="col"><a href="/plc_delete_police/{{ i[0] }}/{{ i[8] }}">Delete</a></th>
+    </tr>
+      {% endfor %}
+  </table>
+</form>
+{% endblock %}

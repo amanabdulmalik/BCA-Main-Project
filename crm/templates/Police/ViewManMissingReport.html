@@ -1,0 +1,26 @@
+{% extends "Police/newpolice.html" %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="">
+  <table width="672" height="69" border="1" align="center">
+    <tr>
+      <th width="122" scope="col">Report id</th>
+      <th width="122" scope="col">Missing id</th>
+      <th width="109" scope="col">User id</th>
+      <th width="122" scope="col">Location</th>
+      <th width="88" scope="col">Missing Man Details</th>
+      <th width="89" scope="col">&nbsp;</th>
+    </tr>
+      {% for i in res %}
+    <tr>
+      <td>{{i['report_id']}}</td>
+      <td>{{i['manmissing_id']}}</td>
+      <td>{{i['user_id']}}</td>
+      <td>{{i['latitude']}} {{i['longitude']}} {{i['place']}}</td>
+      <td>{{i['information']}}</td>
+      <td><div align="center"><a href="#">Contact User</a></div></td>
+    </tr>
+      {% endfor %}
+  </table>
+</form>
+{% endblock %}
+

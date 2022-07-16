@@ -1,0 +1,8 @@
+<resources>
+    <color name="colorPrimary">#00a5ff</color>
+    <color name="colorPrimaryDark">#00a5ff</color>
+    <color name="colorAccent">#00a5ff</color>
+    <color name="loginBkColor">#f0f0f0</color>
+    <color name="primaryTextColor">#00a5ff</color>
+    <color name="whiteTextColor">#fff</color>
+</resources>

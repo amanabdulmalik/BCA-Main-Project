@@ -1,0 +1,32 @@
+{% extends "Police/newpolice.html" %}
+{% block body %}
+
+  <form id="form1" name="form1" method="post" action="">
+    <table width="1221" height="122" border="1" align="center" table class="table table-bordered table-hover">
+      <tr>
+        <th width="70" height="38" scope="col">Sl.No</th>
+        <th width="212" scope="col">Name</th>
+        <th width="230" scope="col">Details</th>
+        <th width="246" scope="col">Description</th>
+        <th width="138" scope="col">Photo</th>
+        <th width="159" scope="col">Contact</th>
+        <th width="58" scope="col">&nbsp;</th>
+        <th width="56" scope="col"><p>&nbsp;</p></th>
+      </tr>
+        {% for i in res %}
+      <tr>
+        <td height="76">{{ loop.index}}</td>
+        <td>{{ i[1] }}</td>
+        <td>Gender:{{ i[2]}}<br>DoB:{{i[3]}}<br>House No:{{i[5]}}<br>Street:{{i[6]}}<br>City:{{i[7]}}<br>District:{{i[8]}}<br>State:{{ i[9] }}</td>
+        <td><br>Height:{{i[10]}}<br>Weight:{{i[11]}}<br>Skin Tone:{{i[12]}}<br>ID Marks:{{i[13]}}<br>Missing Place:{{i[14]}}<br>Last Seen:{{i[15]}}</td>
+        <td><img src="/static/uploads/{{ i[4] }}"  width="100" height="100"></td>
+        <td>{{i[17]}}</td>
+        <th width="58" scope="col"><a href="/plc_edit_missing/{{ i[0] }}">Edit</a></th>
+        <th width="56" scope="col"><a href="/plc_delete_missing/{{ i[0] }}">Delete</a></th>
+      </tr>
+        {% endfor %}
+    </table>
+  </form>
+{% endblock %}
+
+

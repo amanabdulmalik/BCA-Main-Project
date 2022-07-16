@@ -1,0 +1,26 @@
+{% extends "Admin/newtemp.html" %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="">
+  <table class="table-bordered table, table table-hover">
+    <tr>
+      <th width="117" scope="col">Notification id</th>
+      <th width="184" scope="col">Subject</th>
+      <th width="218" scope="col">Content</th>
+      <th width="204" scope="col">Type</th>
+      <th width="99" scope="col">Date</th>
+      <th width="99" scope="col">&nbsp;</th>
+    </tr>
+      {% for i in res %}
+    <tr>
+      <td>{{i[0]}}</td>
+      <td>{{i[1]}}</td>
+      <td>{{i[2]}}</td>
+      <td>{{ i[4] }}</td>
+      <td>&nbsp;{{i[3]}}</td>
+      <th width="99" scope="col"><a href="plc_delete_not/{{ i[0] }}">Delete</a></th>
+    </tr>
+      {% endfor %}
+  </table>
+</form>
+{% endblock %}
+

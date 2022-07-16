@@ -1,0 +1,22 @@
+{% extends "Police/newpolice.html" %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="">
+  <table width="661" height="75" border="1" align="center" class="table table-bordered table-hover">
+    <tr>
+      <th width="117" scope="col">SL NO</th>
+      <th width="156" scope="col">Subject</th>
+      <th width="180" scope="col">Content</th>
+      <th width="180" scope="col">Date</th>
+    </tr>
+      {% for i in res %}
+    <tr>
+      <td>{{loop.index}}</td>
+      <td>{{i[1]}}</td>
+      <td>{{i[2]}}</td>
+      <td>{{i[3]}}</td>
+    </tr>
+      {% endfor %}
+  </table>
+</form>
+{% endblock %}
+
